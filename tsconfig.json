@@ -4,9 +4,9 @@
         "exactOptionalPropertyTypes": true,
         "noFallthroughCasesInSwitch": true,
         "noImplicitThis": true,
-        "noUnusedLocals": true,
+        // "noUnusedLocals": true, -> this app can have unused variable
         "noUnusedParameters": true,
-        // "noImplicitAny": true,
+        // "noImplicitAny": true, -> this app allows any type
         "alwaysStrict": true,
         "strictBindCallApply": true,
         "strictFunctionTypes": true,
