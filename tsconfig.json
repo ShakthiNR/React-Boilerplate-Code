@@ -16,7 +16,12 @@
         "esModuleInterop": true,
         "allowJs": true,
         "checkJs": true,
-        "isolatedModules": true
+        "isolatedModules": true,
+        // absolute path to components (baseUrl an paths)
+        "baseUrl": "./src",
+        "paths": {
+            "@components/*":["./components/*"]
+        }
     },
     "include": ["src/**/**/*", "src/declaration.d.ts"],
     "exclude": ["node_modules"]
