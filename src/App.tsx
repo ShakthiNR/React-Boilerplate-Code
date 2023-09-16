@@ -4,8 +4,7 @@ import Footer from "./Components/Footer"
 import "./styles.css"
 
 const App = () =>{
-    const status: string = "I am working :)"
-    let ene: boolean = false
+    const status: string = "I am working, super :)"
 
     return(
        <>

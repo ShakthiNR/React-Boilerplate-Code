@@ -10,7 +10,12 @@ module.exports = [
             path: path.resolve(__dirname, "dist/client"),
             filename: "client_bundle.js",
         },
-        plugins:[
+        devServer: {
+            port: 3000,
+            open: true,
+            hot: true
+        },
+        plugins: [
             new HtmlWebpackPlugin({
                 template: "./src/index.html",
             })
