@@ -1,5 +1,11 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+// configuration for .env.dev file
+require('dotenv').config({
+    path: "./.env.dev"
+})
 
 module.exports = [
     {
@@ -18,14 +24,28 @@ module.exports = [
         plugins: [
             new HtmlWebpackPlugin({
                 template: "./src/index.html",
+            }),
+
+            // For adding .env variables
+            new webpack.DefinePlugin({
+                'process.env': JSON.stringify(process.env)
+            }),
+            /**
+            
+            new webpack.DefinePlugin({
+                'process.env': {
+                    'USER_NAME': JSON.stringify(process.env),
+                }
             })
+            */
+
         ],
         resolve: {
+            extensions: [".js", ".ts", ".tsx", ".jsx", ".json"],
             // absolute path to components
             alias: {
                 "@components": path.resolve(__dirname, "src/components/")
-            },
-            extensions: [".js", ".ts", ".tsx", ".jsx", ".json"]
+            }
         },
         module: {
             rules: [
