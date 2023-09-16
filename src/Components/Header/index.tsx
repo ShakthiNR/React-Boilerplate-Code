@@ -8,6 +8,7 @@ const Header = () => {
                 Header
             </header>
             <img src={Image} width={100} alt='my-img' />
+            <Link to="/">home</Link> &nbsp;
             <Link to="about">about</Link>
         </div>
     )
