@@ -1,10 +1,10 @@
 import React from 'react'
-
+import "./styles.css"
 const Footer = () => {
   return (
     <div>
         <footer>
-            I am from footer component
+             <p> I am from footer component, <span className='owner-mail'>@shakthinr.co.in  </span> </p> 
         </footer>
     </div>
   )

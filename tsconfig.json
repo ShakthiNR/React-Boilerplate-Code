@@ -12,7 +12,7 @@
         "strictFunctionTypes": true,
         "strictNullChecks": true,
         "strictPropertyInitialization": true,
-        "jsx": "react",
+        "jsx": "react-jsx", // new JSX transform (no longer necessary to import React in every file that uses JSX)
         "esModuleInterop": true,
         "allowJs": true,
         "checkJs": true,
