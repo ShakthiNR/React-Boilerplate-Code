@@ -1,3 +1,4 @@
+
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -20,11 +21,11 @@ module.exports = [
             port: 3000,
             open: true,
             hot: true,
-            historyApiFallback: true
+           // historyApiFallback: true
         },
         plugins: [
             new HtmlWebpackPlugin({
-                template: "./src/index.html",
+                template: "./public/index.html",
             }),
 
             // For adding .env variables
@@ -32,7 +33,7 @@ module.exports = [
                 'process.env': JSON.stringify(process.env)
             }),
             /**
-            
+
             new webpack.DefinePlugin({
                 'process.env': {
                     'USER_NAME': JSON.stringify(process.env),

@@ -2,14 +2,21 @@ import Image from "../../assets/images/img-1.png";
 import { Link } from "react-router-dom"
 
 const Header = () => {
+
+    const imgStyle = {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
     return (
         <div>
             <header className='header'>
-                Header
+                <Link to="/">home</Link> &nbsp;
+                <Link to="about">about</Link>
             </header>
-            <img src={Image} width={100} alt='my-img' />
-            <Link to="/">home</Link> &nbsp;
-            <Link to="about">about</Link>
+            <div style={imgStyle}>
+                <img src={Image} width={100} alt='my-img' />
+            </div>
         </div>
     )
 }
