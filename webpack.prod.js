@@ -15,7 +15,7 @@ module.exports = [
         devtool: 'hidden-source-map', // Hide our source code after deployment
         target: "web",
         output: {
-            path: path.resolve(__dirname, "dist/client"),
+            path: path.resolve(__dirname, "build"),
              publicPath: "/",
             filename: "client_bundle.js",
             clean: true // remove previously generated build files

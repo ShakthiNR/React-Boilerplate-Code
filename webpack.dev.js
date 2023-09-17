@@ -14,7 +14,7 @@ module.exports = [
         mode: "development",
         target: "web",
         output: {
-            path: path.resolve(__dirname, "dist/client"),
+            path: path.resolve(__dirname, "build"),
             filename: "client_bundle.js",
         },
         devServer: {
