@@ -18,8 +18,8 @@ module.exports = [
             filename: "client_bundle.js",
         },
         devServer: {
-            port: 3000,
-            open: true,
+            port: 3000, // default port
+            open: true, // open the browser tab automatically
             hot: true,
            // historyApiFallback: true
         },

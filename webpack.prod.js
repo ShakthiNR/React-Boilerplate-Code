@@ -3,7 +3,8 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
-// configuration for .env.dev file
+
+// configuration for .env.prod file
 require('dotenv').config({
     path: "./.env.prod"
 })
@@ -24,12 +25,9 @@ module.exports = [
             new HtmlWebpackPlugin({
                 template: "./public/index.html",
             }),
-
-            // For adding .env variables
             new webpack.DefinePlugin({
                 'process.env': JSON.stringify(process.env)
             }),
-
             // create separate css file (for better performance)
             new MiniCssExtractPlugin({
                 filename: '[name].css',
@@ -38,7 +36,6 @@ module.exports = [
         ],
         resolve: {
             extensions: [".js", ".ts", ".tsx", ".jsx", ".json"],
-            // absolute path to components
             alias: {
                 "@components": path.resolve(__dirname, "src/components/")
             }
@@ -64,7 +61,7 @@ module.exports = [
                     test: /\.css$/,
                     exclude: /node_modules/,
                     // as MiniCssExtractPlugin.loader included so 'style-loader' not required
-                    use: [MiniCssExtractPlugin.loader, 'css-loader']
+                    use: [MiniCssExtractPlugin.loader, 'css-loader'] // have separate css files instead of inline styles
                 },
                 {
                     test: /\.(jpeg|jpg|png|svg)$/,
@@ -72,6 +69,7 @@ module.exports = [
                 }
             ]
         },
+        // to remove warnings
         performance: {
             hints: false
         },
